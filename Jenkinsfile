@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Run Test') {
             steps {
-                 powershell  "docker-compose up testnj  search-module"
+                 powershell  "docker-compose up testnj.xml  search-module.xml"
                 }
         }
         stage('Bring Grid Down') {

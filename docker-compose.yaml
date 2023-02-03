@@ -42,7 +42,7 @@ services:
       - HUB_HOST=hub
       - MODULE=search-module.xml
     volumes:
-      - ./search-resultsF:/usr/share/udemy/test-output
+      - ./output/search-resultsF:/usr/share/udemy/test-output
   search-moduleC:
     image: vonsdpcker/selenium-docker
     depends_on:
@@ -53,7 +53,7 @@ services:
       - HUB_HOST=hub
       - MODULE=search-module.xml
     volumes:
-      - ./search-resultsC:/usr/share/udemy/test-output
+      - ./output/search-resultsC:/usr/share/udemy/test-output
   book-moduleC:
     image: vonsdpcker/selenium-docker
     depends_on:
@@ -64,7 +64,7 @@ services:
       - HUB_HOST=hub
       - MODULE=testnj.xml
     volumes:
-      - ./book-resultsC:/usr/share/udemy/test-output
+      - ./output/book-resultsC:/usr/share/udemy/test-output
   book-moduleF:
     image: vonsdpcker/selenium-docker
     depends_on:
@@ -75,4 +75,4 @@ services:
       - HUB_HOST=hub
       - MODULE=testnj.xml
     volumes:
-      - ./book-resultsF:/usr/share/udemy/test-output
+      - ./output/book-resultsF:/usr/share/udemy/test-output

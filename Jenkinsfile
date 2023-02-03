@@ -3,7 +3,7 @@ pipeline {
     stages {
 		stage('Pull lastest images') {
             steps {
-                 powershell  "docker pull vonsdpcker/selenium-docker"
+                 powershell  "docker pull orlio/vinsdockerselenium-docker"
                 }
         }
         stage('Start Grid') {

@@ -1,6 +1,11 @@
 pipeline {
     agent any
     stages {
+		stage('Pull lastest images') {
+            steps {
+                 powershell  "docker pull vonsdpcker/selenium-docker"
+                }
+        }
         stage('Start Grid') {
             steps {
                  powershell  "docker-compose up -d hub chrome firefox"

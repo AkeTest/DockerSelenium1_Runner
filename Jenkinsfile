@@ -11,11 +11,13 @@ pipeline {
                  powershell  "docker-compose up search-moduleF book-moduleC"
                 }
         }
-        stage('Bring Grid Down') {
-            steps {
-                    powershell " docker-compose down"
-                    
-                }
-            }        
+               
+        }
+    post{
+        always{
+            archiveArtifacts artifacts: 'output/**'
+            powershell " docker-compose down"
+            }
+
+        }
     }
-}
